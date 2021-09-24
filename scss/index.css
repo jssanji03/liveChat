@@ -189,6 +189,8 @@ p {
 .scroller {
   scrollbar-color: rgba(73, 138, 190, 0.2) rgba(255, 255, 255, 0);
   scrollbar-width: thin;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .chat {
