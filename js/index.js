@@ -1,5 +1,6 @@
 const expandBtn = $('.expend')
 const element = $('.chatBox header');
+const chatBox = document.querySelector('.chat-thread');
 
 $("#live-chat header").on("click", function () {
     element.addClass("close");
