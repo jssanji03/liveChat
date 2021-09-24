@@ -188,6 +188,7 @@ p {
   list-style: none;
   overflow-y: scroll;
   overflow-x: hidden;
+  word-break: break-all;
 }
 
 .chat-thread li {

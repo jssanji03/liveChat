@@ -182,6 +182,7 @@ $chat-thread-offset: #{$chat-thread-avatar-size + 30px};
     list-style: none;
     overflow-y: scroll;
     overflow-x: hidden;
+    word-break: break-all;
 }
 
 .chat-thread li {

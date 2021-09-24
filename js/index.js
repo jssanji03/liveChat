@@ -34,7 +34,7 @@ function setDate() {
 
 function insertMessage() {
     var regexp = /((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi;
-    msg = $('.message-input').val().replace(regexp, '<a href="$1">$1</a>');
+    msg = $('.message-input').val().replace(regexp, '<a target="_blank" href="$1">$1</a>');
     if ($.trim(msg) == '') {
         return false;
     }
