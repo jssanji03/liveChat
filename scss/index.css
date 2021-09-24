@@ -72,7 +72,6 @@ p {
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12);
   z-index: 999;
-  display: none;
 }
 
 .expend i {
@@ -89,7 +88,6 @@ p {
   background: #e62727;
   border: 1px solid #fff;
   border-radius: 50%;
-  display: none;
   font-size: 12px;
   font-weight: bold;
   width: 25px;
@@ -187,7 +185,7 @@ p {
   padding: 0 20px;
   height: 320px;
   list-style: none;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   word-break: break-all;
 }
@@ -272,7 +270,6 @@ p {
   bottom: -15px;
   width: 30px;
   left: 0px;
-  font-size: 9px;
   color: rgba(14, 14, 14, 0.3);
 }
 
@@ -301,7 +298,6 @@ p {
   width: 30px;
   bottom: -15px;
   right: 0px;
-  font-size: 9px;
   color: rgba(14, 14, 14, 0.3);
 }
 

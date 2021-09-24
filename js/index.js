@@ -37,7 +37,8 @@ function setDate() {
     d = new Date();
     m = 0;
     if (m != d.getMinutes()) {
-        m = d.getMinutes();
+        m = ('0' + d.getMinutes()).substr(-2);
+        console.log(m);
         $('.timestamp').text(d.getHours() + ':' + m)
     }
 }
@@ -48,12 +49,10 @@ function insertMessage() {
     if ($.trim(msg) == '') {
         return false;
     }
-    $(`<li class="message">${msg}<span class="timestamp"></span></li>`).appendTo($('.chat-thread'));
+    $(`<li class="message">${msg}<small class="timestamp"></small></li>`).appendTo($('.chat-thread'));
     setDate();
     chatBox.scrollTop = chatBox.scrollHeight;
     $('.message-input').val('');
-    console.log(chatBox.scrollTop);
-    console.log(chatBox.scrollHeight);
 }
 $(window).on('keydown', function (e) {
     if (e.which == 13) {

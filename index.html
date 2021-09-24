@@ -11,35 +11,32 @@
 </head>
 
 <body>
-    <frame onblur="self.focus()">
-        <div id="live-chat">
-            <div class="expend">
-                <i class="fa fa-comments"></i>
-                <span class="chat-message-counter">3</span>
-            </div>
-            <div class="chatBox">
-                <header class="clearfix">
-                    <a href="#" class="icon chat-delete">x</a>
-                    <h4>John Doe</h4>
-                </header>
-                <div class="chat">
-                    <ul class="chat-thread" style="overflow: scroll;">
-                        <li class="message"><a href="two.html">Hello!!Link</a></li>
-                        <li class="message">yes, what time suits you?</li>
-                        <li class="message">I was thinking after lunch, I have a meeting in the morning</li>
-                    </ul>
+    <div id="live-chat">
+        <div class="expend">
+            <i class="fa fa-comments"></i>
+            <span class="chat-message-counter">3</span>
+        </div>
+        <div class="chatBox close">
+            <header class="clearfix">
+                <a href="#" class="icon chat-delete">x</a>
+                <h4>John Doe</h4>
+            </header>
+            <div class="chat">
+                <ul class="chat-thread" style="overflow: scroll;">
+                    <li class="message"><a href="two.html">Hello!!Link</a></li>
+                    <li class="message">yes, what time suits you?</li>
+                    <li class="message">I was thinking after lunch, I have a meeting in the morning</li>
+                </ul>
 
-                    <p class="chat-feedback">Your partner is typing…</p>
+                <p class="chat-feedback">Your partner is typing…</p>
 
-                    <div class="message-box">
-                        <input type="text" class="message-input" placeholder="Type your message…" autofocus>
-                        <button type="submit" class="btn btn-primary message-submit">Send</button>
-                    </div>
-                </div> <!-- end chat -->
-            </div>
-
-        </div> <!-- end live-chat -->
-    </frame>
+                <div class="message-box">
+                    <input type="text" class="message-input" placeholder="Type your message…" autofocus>
+                    <button type="submit" class="btn btn-primary message-submit">Send</button>
+                </div>
+            </div> <!-- end chat -->
+        </div>
+    </div> <!-- end live-chat -->
 </body>
 <script src="./plugin/jquery/jquery-3.6.0.min.js"></script>
 <script src="./plugin/bootstrap-5.0.0-dist/js/bootstrap.bundle.min.js"></script>
