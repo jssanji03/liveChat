@@ -1,6 +1,9 @@
 const expandBtn = $('.expend')
 const element = $('.chatBox header');
 const chatBox = document.querySelector('.chat-thread');
+window.onload = function () {
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
 
 $("#live-chat header").on("click", function () {
     element.addClass("close");
@@ -15,21 +18,28 @@ $(".chat-delete").on("click", function (e) {
     $("#live-chat").fadeOut(300);
 });
 
+
+
 function closeElement() {
     $(".chatBox").addClass("close");
     $(".chat-message-counter").show();
     expandBtn.show();
+
 }
 function openElement() {
     $(".chatBox").removeClass("close");
     expandBtn.hide();
     $(".chat-message-counter").hide();
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 function setDate() {
-    d = new Date()
-    m = d.getMinutes();
-    $('.timestamp').text(d.getHours() + ':' + m)
+    d = new Date();
+    m = 0;
+    if (m != d.getMinutes()) {
+        m = d.getMinutes();
+        $('.timestamp').text(d.getHours() + ':' + m)
+    }
 }
 
 function insertMessage() {
@@ -40,16 +50,17 @@ function insertMessage() {
     }
     $(`<li class="message">${msg}<span class="timestamp"></span></li>`).appendTo($('.chat-thread'));
     setDate();
+    chatBox.scrollTop = chatBox.scrollHeight;
     $('.message-input').val('');
+    console.log(chatBox.scrollTop);
+    console.log(chatBox.scrollHeight);
 }
 $(window).on('keydown', function (e) {
     if (e.which == 13) {
         insertMessage();
-        chatBox.scrollTop = chatBox.scrollHeight
         return false;
     }
 })
 $('.message-submit').click(function () {
     insertMessage();
-    chatBox.scrollTop = chatBox.scrollHeight
 });
