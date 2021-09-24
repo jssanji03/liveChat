@@ -169,6 +169,29 @@ $chat-thread-msg-arrow-size: 10px;
 $chat-thread-avatar-size: 40px;
 $chat-thread-offset: #{$chat-thread-avatar-size + 30px};
 
+// ::-webkit-scrollbar {
+//     /*隱藏滾輪*/
+//     display: none;
+// }
+
+// .body {
+//     overflow-x: hidden;
+// }
+
+::-webkit-scrollbar {
+    width: $scrollbar-width;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: $scrollbar-width;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: $scrollbar-width;
+    background-color: $chat-thread-bgd-color;
+}
+
 .chat {
     background: #fff;
     .chat-feedback {
@@ -180,6 +203,7 @@ $chat-thread-offset: #{$chat-thread-avatar-size + 30px};
     padding: 0 20px;
     height: 320px;
     list-style: none;
+    // overflow: hidden;
     overflow-y: auto;
     overflow-x: hidden;
     word-break: break-all;
@@ -328,56 +352,56 @@ $chat-thread-offset: #{$chat-thread-avatar-size + 30px};
 
 // Animation
 // --------------------------------------
-@keyframes show-chat-even {
-    0% {
-        margin-left: -480px;
-    }
-    100% {
-        margin-left: 0;
-    }
-}
+// @keyframes show-chat-even {
+//     0% {
+//         margin-left: -480px;
+//     }
+//     100% {
+//         margin-left: 0;
+//     }
+// }
 
-@-moz-keyframes show-chat-even {
-    0% {
-        margin-left: -480px;
-    }
-    100% {
-        margin-left: 0;
-    }
-}
+// @-moz-keyframes show-chat-even {
+//     0% {
+//         margin-left: -480px;
+//     }
+//     100% {
+//         margin-left: 0;
+//     }
+// }
 
-@-webkit-keyframes show-chat-even {
-    0% {
-        margin-left: -480px;
-    }
-    100% {
-        margin-left: 0;
-    }
-}
+// @-webkit-keyframes show-chat-even {
+//     0% {
+//         margin-left: -480px;
+//     }
+//     100% {
+//         margin-left: 0;
+//     }
+// }
 
-@keyframes show-chat-odd {
-    0% {
-        margin-right: -480px;
-    }
-    100% {
-        margin-right: 0;
-    }
-}
+// @keyframes show-chat-odd {
+//     0% {
+//         margin-right: -480px;
+//     }
+//     100% {
+//         margin-right: 0;
+//     }
+// }
 
-@-moz-keyframes show-chat-odd {
-    0% {
-        margin-right: -480px;
-    }
-    100% {
-        margin-right: 0;
-    }
-}
+// @-moz-keyframes show-chat-odd {
+//     0% {
+//         margin-right: -480px;
+//     }
+//     100% {
+//         margin-right: 0;
+//     }
+// }
 
-@-webkit-keyframes show-chat-odd {
-    0% {
-        margin-right: -480px;
-    }
-    100% {
-        margin-right: 0;
-    }
-}
+// @-webkit-keyframes show-chat-odd {
+//     0% {
+//         margin-right: -480px;
+//     }
+//     100% {
+//         margin-right: 0;
+//     }
+// }

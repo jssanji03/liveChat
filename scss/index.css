@@ -172,6 +172,20 @@ p {
   width: 16px;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(73, 138, 190, 0.2);
+}
+
 .chat {
   background: #fff;
 }
@@ -327,42 +341,6 @@ p {
     height: 320px;
     padding: 30px;
     margin: 0px;
-  }
-}
-
-@keyframes show-chat-even {
-  0% {
-    margin-left: -480px;
-  }
-  100% {
-    margin-left: 0;
-  }
-}
-
-@-webkit-keyframes show-chat-even {
-  0% {
-    margin-left: -480px;
-  }
-  100% {
-    margin-left: 0;
-  }
-}
-
-@keyframes show-chat-odd {
-  0% {
-    margin-right: -480px;
-  }
-  100% {
-    margin-right: 0;
-  }
-}
-
-@-webkit-keyframes show-chat-odd {
-  0% {
-    margin-right: -480px;
-  }
-  100% {
-    margin-right: 0;
   }
 }
 /*# sourceMappingURL=index.css.map */
