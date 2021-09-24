@@ -191,6 +191,11 @@ $chat-thread-offset: #{$chat-thread-avatar-size + 30px};
     border-radius: $scrollbar-width;
     background-color: $chat-thread-bgd-color;
 }
+//firefox thumb track
+.scroller {
+    scrollbar-color: rgba(73, 138, 190, 0.2) rgba(255, 255, 255, 0);
+    scrollbar-width: thin;
+}
 
 .chat {
     background: #fff;
