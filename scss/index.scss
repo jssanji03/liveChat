@@ -51,10 +51,10 @@ p {
 
 /* ---------- LIVE-CHAT ---------- */
 .expend {
+    display: none;
     background: #293239;
     position: fixed;
     cursor: pointer;
-    display: flex;
     bottom: 10px;
     right: 10px;
     width: 50px;

@@ -20,14 +20,14 @@ element.click(closeElement)
 
 function closeElement() {
     $(".chatBox").addClass("close");
-    $(".chat-message-counter").show();
+    // $(".chat-message-counter").show();
     expandBtn.show();
 
 }
 function openElement() {
     $(".chatBox").removeClass("close");
     expandBtn.hide();
-    $(".chat-message-counter").hide();
+    // $(".chat-message-counter").hide();
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
