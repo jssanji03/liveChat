@@ -3,7 +3,7 @@ const element = $('.chatBox header');
 const chatBox = document.querySelector('.chat-thread');
 window.onload = function () {
     chatBox.scrollTop = chatBox.scrollHeight;
-    expandBtn.hide()
+    // expandBtn.hide()
 }
 
 $("#live-chat header").on("click", function () {
