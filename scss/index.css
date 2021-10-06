@@ -76,9 +76,9 @@ p {
 
 .expend i {
   position: absolute;
-  left: 15px;
+  left: 14px;
   display: inline-block;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 44px;
   margin: 0 auto;
   color: #fff;
@@ -158,20 +158,6 @@ p {
   font-size: 12px;
 }
 
-.icon {
-  background: #1b2126;
-  border-radius: 50%;
-  color: #fff;
-  display: block;
-  float: right;
-  font-size: 10px;
-  height: 16px;
-  line-height: 16px;
-  margin: 2px 0 0 0;
-  text-align: center;
-  width: 16px;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -206,8 +192,8 @@ p {
   padding: 0 15px;
   height: 320px;
   list-style: none;
+  overflow: hidden;
   overflow-y: auto;
-  overflow-x: hidden;
   word-break: break-all;
 }
 
@@ -217,7 +203,6 @@ p {
   display: inline-block;
   padding: 10px;
   margin-bottom: 20px;
-  font-size: 12px;
   line-height: 15px;
   border-radius: 10px;
   background-color: rgba(73, 138, 190, 0.2);
@@ -258,6 +243,16 @@ p {
 }
 
 /* Chat - Avatar */
+.chat-thread li:before {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  content: "";
+}
+
 /* Chat - Speech Bubble Arrow */
 .chat-thread li:after {
   position: absolute;
@@ -267,7 +262,7 @@ p {
   height: 0;
 }
 
-.chat-thread li:nth-child(odd) {
+.chat-thread li:nth-child(even) {
   animation: show-chat-odd 0.15s 1 ease-in;
   -moz-animation: show-chat-odd 0.15s 1 ease-in;
   -webkit-animation: show-chat-odd 0.15s 1 ease-in;
@@ -279,7 +274,7 @@ p {
   position: relative;
 }
 
-.chat-thread li:nth-child(odd) .timestamp {
+.chat-thread li:nth-child(even) .timestamp {
   position: absolute;
   bottom: -15px;
   right: 0px;
@@ -288,25 +283,25 @@ p {
   text-align: right;
 }
 
-.chat-thread li:nth-child(odd):after {
+.chat-thread li:nth-child(even):after {
   border-right: 10px solid transparent;
   right: -10px;
   border-top: 10px solid #d1f5d9;
 }
 
-.chat-thread li:nth-child(even) {
+.chat-thread li:nth-child(odd) {
   animation: show-chat-even 0.15s 1 ease-in;
   -moz-animation: show-chat-even 0.15s 1 ease-in;
   -webkit-animation: show-chat-even 0.15s 1 ease-in;
   float: left;
-  margin-left: 0px;
+  margin-left: 45px;
   margin-right: 50px;
   color: #535353;
   background-color: #f1f1f1;
   position: relative;
 }
 
-.chat-thread li:nth-child(even) .timestamp {
+.chat-thread li:nth-child(odd) .timestamp {
   position: absolute;
   width: 50px;
   bottom: -15px;
@@ -314,7 +309,19 @@ p {
   color: rgba(14, 14, 14, 0.3);
 }
 
-.chat-thread li:nth-child(even):after {
+.chat-thread li:nth-child(odd):before {
+  left: -45px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 35px;
+  content: "\f544";
+  background-color: #7e7e7e;
+  color: #fafafa;
+  text-align: center;
+}
+
+.chat-thread li:nth-child(odd):after {
   border-left: 10px solid transparent;
   left: -10px;
   border-top: 10px solid #f1f1f1;
@@ -322,9 +329,67 @@ p {
 
 /* Small screens */
 @media all and (max-width: 767px) {
-  .chat-thread {
-    width: 90%;
-    height: 260px;
+  #live-chat h4 {
+    font-size: 16px;
+  }
+  #live-chat .chatBox {
+    margin: 0 auto;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 10px;
+    right: 0px;
+    -webkit-box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.15);
+  }
+  #live-chat .chatBox.close {
+    background: #293239;
+    position: fixed;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    line-height: 40px;
+    padding: 3px;
+    border-radius: 50%;
+    -webkit-transition: all 250ms ease-out;
+    transition: all 250ms ease-out;
+  }
+  #live-chat .chatBox.close header {
+    display: none;
+  }
+  #live-chat .chatBox.close .chat {
+    display: none;
+  }
+  #live-chat header {
+    background: #293239;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    cursor: pointer;
+    padding: 16px 24px;
+  }
+  #live-chat .chat {
+    height: 100%;
+    font-size: 14px;
+  }
+  #live-chat .chat .chat-thread {
+    padding: 5px 15px;
+    width: 100%;
+    height: 75%;
+    list-style: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-break: break-all;
+  }
+  #live-chat .chat .chat-thread li {
+    font-size: 15px;
+  }
+  #live-chat .chat .message-submit {
+    font-size: 15px;
   }
 }
 

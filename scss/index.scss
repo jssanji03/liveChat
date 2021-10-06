@@ -68,9 +68,9 @@ p {
 
     i {
         position: absolute;
-        left: 15px;
+        left: 14px;
         display: inline-block;
-        font-size: 18px;
+        font-size: 20px;
         line-height: 44px;
         margin: 0 auto;
         color: #fff;
@@ -143,19 +143,19 @@ p {
     font-size: 12px;
 }
 
-.icon {
-    background: #1b2126;
-    border-radius: 50%;
-    color: #fff;
-    display: block;
-    float: right;
-    font-size: 10px;
-    height: 16px;
-    line-height: 16px;
-    margin: 2px 0 0 0;
-    text-align: center;
-    width: 16px;
-}
+// .icon {
+//     background: #1b2126;
+//     border-radius: 50%;
+//     color: #fff;
+//     display: block;
+//     float: right;
+//     font-size: 10px;
+//     height: 16px;
+//     line-height: 16px;
+//     margin: 2px 0 0 0;
+//     text-align: center;
+//     width: 16px;
+// }
 
 // Imports
 // --------------------------------------
@@ -166,6 +166,7 @@ p {
 $scrollbar-width: 8px;
 $chat-thread-bgd-color: rgba(73, 138, 190, 0.2);
 $chat-thread-msg-arrow-size: 10px;
+$chat-thread-avatar-size:35px;
 
 // ::-webkit-scrollbar {
 //     /*隱藏滾輪*/
@@ -208,9 +209,8 @@ $chat-thread-msg-arrow-size: 10px;
     padding: 0 15px;
     height: 320px;
     list-style: none;
-    // overflow: hidden;
+    overflow: hidden;
     overflow-y: auto;
-    overflow-x: hidden;
     word-break: break-all;
 }
 
@@ -220,7 +220,7 @@ $chat-thread-msg-arrow-size: 10px;
     display: inline-block;
     padding: 10px;
     margin-bottom: 20px;
-    font-size: 12px;
+    // font-size: 12px;
     line-height: 15px;
     border-radius: 10px;
     background-color: $chat-thread-bgd-color;
@@ -258,14 +258,15 @@ $chat-thread-msg-arrow-size: 10px;
     }
 }
 /* Chat - Avatar */
-// .chat-thread li:before {
-//     position: absolute;
-//     top: 0;
-//     width: $chat-thread-avatar-size;
-//     height: $chat-thread-avatar-size;
-//     border-radius: $chat-thread-avatar-size;
-//     content: "";
-// }
+.chat-thread li:before {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: $chat-thread-avatar-size;
+    height: $chat-thread-avatar-size;
+    border-radius: $chat-thread-avatar-size;
+    content: "";
+}
 
 /* Chat - Speech Bubble Arrow */
 .chat-thread li:after {
@@ -277,7 +278,7 @@ $chat-thread-msg-arrow-size: 10px;
     
 }
 
-.chat-thread li:nth-child(odd) {
+.chat-thread li:nth-child(even) {
     animation: show-chat-odd 0.15s 1 ease-in;
     -moz-animation: show-chat-odd 0.15s 1 ease-in;
     -webkit-animation: show-chat-odd 0.15s 1 ease-in;
@@ -297,24 +298,20 @@ $chat-thread-msg-arrow-size: 10px;
     }
 }
 
-// .chat-thread li:nth-child(odd):before {
-//     right: -$chat-thread-offset;
-//     background-size: contain;
-//     // Placeholder avatar 1
-// }
 
-.chat-thread li:nth-child(odd):after {
+
+.chat-thread li:nth-child(even):after {
     border-right: $chat-thread-msg-arrow-size solid transparent;
     right: -$chat-thread-msg-arrow-size;
     border-top: $chat-thread-msg-arrow-size solid #d1f5d9;
 }
 
-.chat-thread li:nth-child(even) {
+.chat-thread li:nth-child(odd) {
     animation: show-chat-even 0.15s 1 ease-in;
     -moz-animation: show-chat-even 0.15s 1 ease-in;
     -webkit-animation: show-chat-even 0.15s 1 ease-in;
     float: left;
-    margin-left: 0px;
+    margin-left: $chat-thread-avatar-size+10;
     margin-right: 50px;
     color: #535353;
     background-color: #f1f1f1;
@@ -327,14 +324,21 @@ $chat-thread-msg-arrow-size: 10px;
         color: rgba(14, 14, 14, 0.3);
     }
 }
+.chat-thread li:nth-child(odd):before {
+    left: (-$chat-thread-avatar-size)-10;
+    // background-size: contain;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    font-size: 16px;
+    line-height: 35px;
+    content: "\f544";
+    background-color: #7e7e7e;
+    color: #fafafa;
+    text-align: center;
+    // Placeholder avatar Robot
+}
 
-// .chat-thread li:nth-child(even):before {
-//     left: -$chat-thread-offset;
-//     background-size: contain;
-//     // Placeholder avatar 2
-// }
-
-.chat-thread li:nth-child(even):after {
+.chat-thread li:nth-child(odd):after {
     border-left: $chat-thread-msg-arrow-size solid transparent;
     left: -$chat-thread-msg-arrow-size;
     border-top: $chat-thread-msg-arrow-size solid #f1f1f1;
@@ -344,9 +348,66 @@ $chat-thread-msg-arrow-size: 10px;
 // --------------------------------------
 /* Small screens */
 @media all and (max-width: 767px) {
-    .chat-thread {
-        width: 90%;
-        height: 260px;
+    #live-chat {
+        h4{
+            font-size: 16px;
+        }
+        .chatBox {
+            margin: 0 auto;
+            // padding: 10px;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            bottom: 10px;
+            right: 0px;
+            box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.15);
+            &.close {
+                background: #293239;
+                position: fixed;
+                cursor: pointer;
+                display: flex;
+                bottom: 10px;
+                right: 10px;
+                width: 50px;
+                height: 50px;
+                line-height: 40px;
+                padding: 3px;
+                border-radius: 50%;
+                transition: all 250ms ease-out;
+                header {
+                    display: none;
+                }
+                .chat {
+                    display: none;
+                }
+            }
+        }
+        header {
+            background: #293239;
+            border-radius: 5px 5px 0 0;
+            color: #fff;
+            cursor: pointer;
+            padding: 16px 24px;
+        }
+        .chat{
+            height: 100%;
+            font-size: 14px;
+            .chat-thread {
+                padding: 5px 15px;
+                width: 100%;
+                height: 75%;
+                list-style: none;
+                overflow-y: auto;
+                overflow-x: hidden;
+                word-break: break-all;
+                li{
+                    font-size: 15px;
+                }
+            }
+            .message-submit{
+                font-size: 15px;
+            }
+        }
     }
 }
 

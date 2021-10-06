@@ -3,20 +3,18 @@ const element = $('.chatBox header');
 const chatBox = document.querySelector('.chat-thread');
 window.onload = function () {
     chatBox.scrollTop = chatBox.scrollHeight;
+    expandBtn.hide()
 }
 
 $("#live-chat header").on("click", function () {
     element.addClass("close");
-    $(".chat-message-counter").fadeToggle(300, "swing");
+    // $(".chat-message-counter").fadeToggle(300, "swing");
 });
 
 expandBtn.click(openElement)
 element.click(closeElement)
 
-$(".chat-delete").on("click", function (e) {
-    e.preventDefault();
-    $("#live-chat").fadeOut(300);
-});
+// 
 
 
 
